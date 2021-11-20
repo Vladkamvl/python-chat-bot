@@ -1,10 +1,11 @@
 from flask import Flask, render_template, request
 
-app: Flask = Flask(__name__)
-
+app: Flask = Flask(__name__, static_folder='./static')
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 botMessages: dict = {
     'hello': 'Hello my friend',
     'bello': 'fuck u',
+    'danil': 'debil',
 }
 
 @app.route('/')
